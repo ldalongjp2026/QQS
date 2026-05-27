@@ -1,0 +1,17 @@
+{
+  "name": "QQS",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "forwardPorts": [8765],
+  "portsAttributes": {
+    "8765": {
+      "label": "QQS invoice app",
+      "onAutoForward": "openBrowser"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}
