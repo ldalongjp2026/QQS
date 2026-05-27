@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QQS 请求书情报录入</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <div class="title-row">
+          <div>
+            <p class="eyebrow">QQS</p>
+            <h1>请求书情报录入</h1>
+          </div>
+          <div class="brand">
+            <strong>ニワノテ</strong>
+            <span>PDF請求書</span>
+          </div>
+        </div>
+
+        <form id="invoice-form" class="form">
+          <div class="grid two">
+            <label>
+              <span>宛先</span>
+              <input name="recipient" value="京嵐株式会社" required />
+            </label>
+            <label>
+              <span>件名</span>
+              <input name="subject" value="庭の手入れ 人工費" required />
+            </label>
+          </div>
+
+          <div class="grid three">
+            <label>
+              <span>金额</span>
+              <input name="amount" inputmode="numeric" value="400000" required />
+            </label>
+            <label>
+              <span>税区分</span>
+              <select name="taxStatus">
+                <option selected>要確認</option>
+                <option>税込</option>
+                <option>税抜</option>
+                <option>非課税</option>
+                <option>不課税</option>
+              </select>
+            </label>
+            <label>
+              <span>請求番号</span>
+              <input name="invoiceNo" value="なし" />
+            </label>
+          </div>
+
+          <div class="grid two">
+            <label>
+              <span>請求日</span>
+              <input name="issueDate" value="2026年5月26日" required />
+            </label>
+            <label>
+              <span>支払期限</span>
+              <input name="dueDate" value="2026年6月1日" required />
+            </label>
+          </div>
+
+          <div class="grid two">
+            <label>
+              <span>明細品目</span>
+              <input name="item" value="庭の手入れ 人工費" required />
+            </label>
+            <label>
+              <span>数量</span>
+              <input name="quantity" value="1式" required />
+            </label>
+          </div>
+
+          <button class="submit" type="submit">
+            <span>PDFを生成</span>
+          </button>
+          <p id="status" class="status" role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
